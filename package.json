@@ -11,5 +11,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Somsubhra Das",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.1"
+  }
 }
