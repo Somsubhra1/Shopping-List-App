@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv/config");
 
 // Init App
@@ -16,6 +17,9 @@ mongoose
 // Express body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Middleware for CORS request
+app.use(cors());
 
 // Use routes
 
