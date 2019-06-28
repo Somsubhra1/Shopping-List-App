@@ -10,7 +10,7 @@ const db = process.env.mongoURI;
 
 // Connect to mongo db
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true, useCreateIndex: true })
     .then(() => console.log(`MongoDB connected successfully`))
     .catch(err => console.log(`Error connecting mongodb ` + err));
 
@@ -23,6 +23,8 @@ app.use(cors());
 
 // Use routes
 app.use("/api/items", require("./routes/api/items"));
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 // Serve static assets if app is in production
 if (process.env.NODE_ENV === "production") {
