@@ -7,8 +7,13 @@ import ShoppingList from "./components/ShoppingList";
 import { Provider } from "react-redux";
 import store from "./store";
 import ItemModal from "./components/ItemModal";
+import { loadUser } from "./actions/authActions";
 
 export default class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser());
+    }
+
     render() {
         return (
             <Provider store={store}>
